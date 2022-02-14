@@ -143,9 +143,9 @@ public class SingleLinkedListDemo {
 			    	for(int i =0; i< index; i++) {
 			    		// 1 > 3 ==> 1 > 2 > 3
 			    		if(i == index-1) {
-			    			SingleNode temp2 = temp;
+			    			SingleNode temp2 = temp.next;
 			    			temp.next = curr;
-			    			curr.next = temp2.next;
+			    			curr.next = temp2;
 			    			
 			    			break; // if node is added break from the loop
 			    		}
