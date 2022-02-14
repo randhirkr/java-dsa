@@ -21,8 +21,22 @@ public class SingleLinkedListDemoTest {
 		
 		
 		singleLinkedListDemo.printLinkedList();
+		System.out.println();
+		
 		int len = singleLinkedListDemo.getLinkedListLength();
 		System.out.println("length of linkedlist: "+len);
+		
+		singleLinkedListDemo.deleteAtIndex(1); //now the linked list is 1->3
+		singleLinkedListDemo.printLinkedList();
+		len = singleLinkedListDemo.getLinkedListLength();
+		System.out.println("length of linkedlist post deletion: "+len);
+		
+		
+		no = singleLinkedListDemo.get(1);  // return 3
+		System.out.println("number is : "+no+ " at index : "+1);
+		
+		
+		
 	}
 
 }

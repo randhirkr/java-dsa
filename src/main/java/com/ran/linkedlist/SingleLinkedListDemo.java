@@ -167,17 +167,19 @@ public class SingleLinkedListDemo {
     public void deleteAtIndex(int index) {
     	
     	SingleNode temp = head;
-    	SingleNode temp2 = null;
+    	SingleNode tempPrev = null;
     	
     	//23 > 11 > 22 > 43 > null, delete index 2 ==> 23 > 11 > 43 > null
-    	for(int i=0; i< index; i++) {
+    	//1 2 3  delete at index 1 ==> 1 3
+    	for(int i=0; i<= index; i++) {
     		
     		if ( i == index-1) { //store previous node
-    			temp2= temp;
+    			tempPrev= temp;
     		}
+    		//delete the node
     		if( i== index) { // when previous node is found, point it to next node
-    			temp2.next = temp.next;
-    			break;
+    			tempPrev.next = temp.next;
+    			System.out.println("value "+temp.getValue()+" deleted at index: "+index);
     		}
     		temp = temp.next;
     	}
