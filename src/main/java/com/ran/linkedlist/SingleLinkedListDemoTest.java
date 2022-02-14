@@ -33,7 +33,7 @@ public class SingleLinkedListDemoTest {
 		
 		
 		no = singleLinkedListDemo.get(1);  // return 3
-		System.out.println("number is : "+no+ " at index : "+1);
+		System.out.println("number at index "+ 1 + " is : "+no);
 		
 		
 		
