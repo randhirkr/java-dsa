@@ -112,6 +112,7 @@ public class SingleLinkedListDemo {
     
     	// head > null
     	// 2 > null , if 3 is added at 0 ==> 3 > 2 > null
+    	// 1 > 3 ==> 1 > 2 > 3
 
     	if(index == 0 && head == null) {
     		SingleNode curr = new SingleNode(val);
@@ -140,12 +141,11 @@ public class SingleLinkedListDemo {
 		    		curr.next = temp.next;
 		    	}else {
 			    	for(int i =0; i< index; i++) {
-			    		
+			    		// 1 > 3 ==> 1 > 2 > 3
 			    		if(i == index-1) {
 			    			SingleNode temp2 = temp;
-			    			temp.next = temp2;
 			    			temp.next = curr;
-			    			curr.next = temp2;
+			    			curr.next = temp2.next;
 			    			
 			    			break; // if node is added break from the loop
 			    		}
