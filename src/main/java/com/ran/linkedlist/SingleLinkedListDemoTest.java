@@ -19,10 +19,10 @@ public class SingleLinkedListDemoTest {
 		int no = singleLinkedListDemo.get(1);  // return 2
 		System.out.println("number is : "+no);
 		
-		// fix this as its going in infinite loop while printing
+		
 		singleLinkedListDemo.printLinkedList();
-		//int len = singleLinkedListDemo.getLinkedListLength();
-		//System.out.println("length of linkedlist: "+len);
+		int len = singleLinkedListDemo.getLinkedListLength();
+		System.out.println("length of linkedlist: "+len);
 	}
 
 }
