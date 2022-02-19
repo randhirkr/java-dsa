@@ -171,13 +171,21 @@ public class SingleLinkedListDemo {
     	
     	//23 > 11 > 22 > 43 > null, delete index 2 ==> 23 > 11 > 43 > null
     	//1 2 3  delete at index 1 ==> 1 3
+    	// 1 > null , delete at index 0 ==> null
+
     	for(int i=0; i<= index; i++) {
+    		
+    		// if its single element, delete here
+        	if(index == 0 && head.next == null) {
+        		head = null;
+        		break;
+        	}
     		
     		if ( i == index-1) { //store previous node
     			tempPrev= temp;
     		}
     		//delete the node
-    		if( i== index) { // when previous node is found, point it to next node
+    		if( i== index && tempPrev != null) { // when previous node is found, point it to next node
     			tempPrev.next = temp.next;
     			System.out.println("value "+temp.getValue()+" deleted at index: "+index);
     		}
@@ -199,6 +207,7 @@ public class SingleLinkedListDemo {
     }
     
     public void printLinkedList() {
+    	System.out.println("printing linked list------");
     	SingleNode temp = head;
     	while(temp!= null) {
     		System.out.print(temp.getValue()+" ");

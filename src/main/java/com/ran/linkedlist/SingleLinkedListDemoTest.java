@@ -5,6 +5,9 @@ public class SingleLinkedListDemoTest {
 	
 	public static void main(String[] args) {
 		
+		// test case 1
+		//["MyLinkedList","addAtHead","addAtTail","addAtIndex","get","deleteAtIndex","get"]
+		//[[],[1],[3],[1,2],[1],[1],[1]]
 		SingleLinkedListDemo singleLinkedListDemo = new SingleLinkedListDemo();
 		singleLinkedListDemo.addAtHead(1);
 		singleLinkedListDemo.printLinkedList();
@@ -34,9 +37,20 @@ public class SingleLinkedListDemoTest {
 		
 		no = singleLinkedListDemo.get(1);  // return 3
 		System.out.println("number at index "+ 1 + " is : "+no);
+		System.out.println("============");
+		System.out.println();
 		
 		
+		// test case 2
+		//["MyLinkedList","addAtHead","deleteAtIndex"]
+		//[[],[1],[0]]
+		SingleLinkedListDemo testcase2 = new SingleLinkedListDemo();
+		testcase2.printLinkedList();
+		testcase2.addAtHead(1);
+		testcase2.printLinkedList();
 		
+		testcase2.deleteAtIndex(0);
+		testcase2.printLinkedList();
 	}
 
 }
