@@ -16,18 +16,25 @@ public class SingleLinkedListDemo {
      * 1 > 2 > 4 > 5 > 6 > 7 > null - get(3) = 5
      */
     public int get(int index) {
+    	
+    	int len = getLinkedListLength();
     
-    	SingleNode curr = head;
-    	
-    	for(int i=0; i < index; i++) {
-    		curr = curr.next;
-    		
-    	}
-    	
-    	if (index < 0) {
+    	if(index<len) {
+	    	SingleNode curr = head;
+	    	
+	    	for(int i=0; i < index; i++) {
+	    		curr = curr.next;
+	    		
+	    	}
+	    	
+	    	if (index < 0) {
+	    		return -1;
+	    	}
+	    	return curr.value ;
+    	}else {
+    		System.out.println("index not valid");
     		return -1;
     	}
-    	return curr.value ;
     }
     
     public void addAtHead(int val) {
@@ -176,25 +183,32 @@ public class SingleLinkedListDemo {
     	//1 2 3  delete at index 1 ==> 1 3
     	// 1 > null , delete at index 0 ==> null
 
-    	for(int i=0; i<= index; i++) {
-    		
-    		// if its single element, delete here
-        	if(index == 0 && head.next == null) {
-        		head = null;
-        		break;
-        	}
-    		
-    		if ( i == index-1) { //store previous node
-    			tempPrev= temp;
-    		}
-    		//delete the node
-    		if( i== index && tempPrev != null) { // when previous node is found, point it to next node
-    			tempPrev.next = temp.next;
-    			System.out.println("value "+temp.getValue()+" deleted at index: "+index);
-    		}
-    		temp = temp.next;
+    	int len = getLinkedListLength();
+    	if(index < len) {
+	    	for(int i=0; i<= index; i++) {
+	    		
+	    		// if its single element, delete here
+	        	if(index == 0 && head.next == null) {
+	        		head = null;
+	        		break;
+	        	}else if(index == 0 && head.next != null) { //delete first element, if more than 1
+	        		head = temp.next;
+	        		break;
+	        	}
+	    		
+	    		if ( i == index-1) { //store previous node
+	    			tempPrev= temp;
+	    		}
+	    		//delete the node
+	    		if( i== index && tempPrev != null) { // when previous node is found, point it to next node
+	    			tempPrev.next = temp.next;
+	    			System.out.println("value "+temp.getValue()+" deleted at index: "+index);
+	    		}
+	    		temp = temp.next;
+	    	}
+    	}else {
+    		System.out.println("Not a valid index "+ index);
     	}
-        
     }
 
     public int getLinkedListLength() {
