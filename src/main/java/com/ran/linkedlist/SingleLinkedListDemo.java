@@ -153,12 +153,15 @@ public class SingleLinkedListDemo {
 			    		temp = temp.next;
 			    	}
 		    	}
-    		}else if(index+1 == len) { // add at tail
+    		}else if((index+1 == len) || (index == len)) { // add at tail
     			while(temp.next != null) {
     				temp = temp.next;
     			}
     			temp.next = curr;
     			curr.next = null;
+    		}else {
+    			System.out.println("Index "+index+" is greater than "
+    					+ "length, nodes will not be inserted");
     		}
     	}
     	

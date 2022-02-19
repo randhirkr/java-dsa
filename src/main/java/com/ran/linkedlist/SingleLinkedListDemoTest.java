@@ -51,6 +51,41 @@ public class SingleLinkedListDemoTest {
 		
 		testcase2.deleteAtIndex(0);
 		testcase2.printLinkedList();
+		
+		// test case 3
+		//["MyLinkedList","addAtHead","addAtHead","addAtHead","addAtIndex","deleteAtIndex",
+		//"addAtHead","addAtTail","get","addAtHead","addAtIndex","addAtHead"]
+		//[[],[7],[2],[1],[3,0],[2],[6],[4],[4],[4],[5,0],[6]]
+		
+		SingleLinkedListDemo testcase3 = new SingleLinkedListDemo();
+		testcase3.printLinkedList();
+		testcase3.addAtHead(7);
+		testcase3.addAtHead(2);
+		testcase3.addAtHead(1);
+		testcase3.printLinkedList();
+		
+		testcase3.addAtIndex(3, 0);
+		testcase3.printLinkedList();
+		
+		testcase3.deleteAtIndex(2);
+		testcase3.printLinkedList();
+		
+		//["MyLinkedList","addAtHead","addAtHead","addAtHead","addAtIndex","deleteAtIndex",
+				//"addAtHead","addAtTail","get","addAtHead","addAtIndex","addAtHead"]
+				//[[],[7],[2],[1],[3,0],[2],[6],[4],[4],[4],[5,0],[6]]
+		testcase3.addAtHead(6);
+		testcase3.printLinkedList();
+		testcase3.addAtTail(4);
+		testcase3.printLinkedList();
+		System.out.println(testcase3.get(4));
+		testcase3.addAtHead(4);
+		testcase3.addAtIndex(5, 0);
+		testcase3.printLinkedList();
+		testcase3.addAtHead(6);
+		testcase3.printLinkedList();
+		
+		
+		
 	}
 
 }
