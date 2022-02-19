@@ -97,12 +97,13 @@ public class SingleLinkedListDemoTest {
 		testcase4.printLinkedList();
 		System.out.println(testcase4.get(0));
 		
-		//["MyLinkedList","addAtHead","get","addAtHead","addAtHead",
-		//"deleteAtIndex","addAtHead","get","get","get","addAtHead","deleteAtIndex"]
-				//[[],[4],[1],[1],[5],[3],[7],[3],[3],[3],[1],[4]]
+		//["MyLinkedList","addAtHead","addAtIndex","get"]
+		//[[],[2],[0,1],[1]]
 		System.out.println("new test case-------");
 		SingleLinkedListDemo testcase5 = new SingleLinkedListDemo();
-		testcase5.addAtHead(4);
+		testcase5.addAtHead(2);
+		testcase5.addAtIndex(0, 1);
+		testcase5.printLinkedList();
 		System.out.println(testcase5.get(1));
 	}
 

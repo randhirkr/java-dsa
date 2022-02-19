@@ -129,10 +129,10 @@ public class SingleLinkedListDemo {
     		SingleNode curr = new SingleNode(val);
     		SingleNode temp = head;
     		head = curr;
-    		curr.next = temp.next;
+    		curr.next = temp;
     	}
     	else {
-    		// process this when linkelist has more than 1 element.
+    		// process this when linkedlist has more than 1 element.
     		int len = getLinkedListLength();
 	    	SingleNode temp = head;
 	    	SingleNode curr = new SingleNode(val);
